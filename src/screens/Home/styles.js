@@ -4,17 +4,15 @@ export const Container = styled.View`
     flex: 1;
     background-color: lightblue;
     padding-top: 15px; /*na web 150px*/
-    /*flex-wrap: wrap;*/
-    /*flex-basis: 100%;*/
-    /*flex-direction: row;*/
-    /* Deixa todos os campos lado a lado, porém ainda está desconfigurado */
+    flex-wrap: wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 `;
 
 export const Inputs = styled.TextInput`
     height: 45px;
-    width: 150px;
+    width: 130px;
     background-color: #FFF;
     border-radius: 5px;
     border-color: #EEE;
