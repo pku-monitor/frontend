@@ -7,8 +7,8 @@ export const INITIAL_STATE = {
 
 export default function home(state=INITIAL_STATE, action){
     console.log("entrou no reducer:")
-    switch(action) {
-        case homeActionTypes.SEND_CONSUMITION_DATA: {
+    switch(action.type) {
+        case homeActionTypes.SEND_CONSUMITION_DATA_REQUEST: {
             const {nameOfProduct, amountOfProduct, amountOfPhenylalanine, consumptionTime}=action.payload;
             console.log("nomedoproduto: "+nameOfProduct);
             return {...state, loading:true}
@@ -17,7 +17,7 @@ export default function home(state=INITIAL_STATE, action){
             return {...state, loading:false}
         }
         case homeActionTypes.SEND_CONSUMITION_DATA_FAILURE:{
-            
+            return {...state, loading:false}
         }
         default:
             return state;
