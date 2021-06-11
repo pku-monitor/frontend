@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView, FlatList } from 'react-native';
 import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 import DateTimePicker from '@react-native-community/datetimepicker';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {DataConsumptionRequest} from '../../store/modules/Home/actions.js'
 
 export default function Home({ navigation }) {
@@ -10,9 +10,9 @@ export default function Home({ navigation }) {
   const [nameOfProduct, setNameOfProduct] = useState("");
   const [amountOfProduct, setAmountOfProduct] = useState("");
   const [phenylalanineConsumed, setPhenylalanineConsumed] = useState("");
-
-  const [phenylalanineOfTheDay, setPhenylalanineOfTheDay] = useState("0");
-
+  
+  const [phenylalanineOfTheDay, setPhenylalanineOfTheDay] = useState(0);
+  
   const [date, setDate] = useState(new Date().getTime()-(14400000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
@@ -23,6 +23,11 @@ export default function Home({ navigation }) {
     {date:'4', productsName:"macarrao", TotalPhenylalanine:"500"},
   ]);
   
+  const dispatch= useDispatch();
+  const { loading } = useSelector((state) => state.login);
+
+
+
   const changeBarPercent = (percentValue=42) => {
     return {
       height: 18,
@@ -58,11 +63,11 @@ export default function Home({ navigation }) {
     setAmountOfProduct(value);
   }
 
-  const dispatch= useDispatch();
 
   function homeSendConsumption(){
     console.log("entrou na homesendconsumption")
     dispatch(DataConsumptionRequest(nameOfProduct, amountOfProduct, phenylalanineConsumed, date));
+    console.log("loading",loading)
   }
 
   return (
@@ -130,11 +135,11 @@ export default function Home({ navigation }) {
           <Text style={{ fontSize: 25, textAlign: 'center' }}>
             Nome do Produto
           </Text>
-          <TextInput value={nameOfProduct} style={{ borderWidth: 1, backgroundColor:"white"}} placeholder="Nome do produto" onChangeText={() => handleNameOfProduct()} />
+          <TextInput value={nameOfProduct} style={{ borderWidth: 1, backgroundColor:"white"}} placeholder="Nome do produto" onChangeText={handleNameOfProduct} />
           <Text style={{ fontSize: 25, textAlign: 'center'}}>
             Quantidade consumida
           </Text>
-          <TextInput value={amountOfProduct} style={{ borderWidth: 1, backgroundColor:"white"}} keyboardType='numeric' placeholder="Quantidade(gramas)" onChangeText={() => handleAmountOfProduct()}/>
+          <TextInput value={amountOfProduct} style={{ borderWidth: 1, backgroundColor:"white"}} keyboardType='numeric' placeholder="Quantidade(gramas)" onChangeText={handleAmountOfProduct}/>
           <Text style={{ fontSize: 25, textAlign: 'center' }}>
             Fenilalanina consumida
           </Text>
