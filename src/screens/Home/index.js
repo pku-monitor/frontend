@@ -6,11 +6,10 @@ import {useDispatch, useSelector} from 'react-redux';
 import {DataConsumptionRequest} from '../../store/modules/Home/actions.js'
 
 export default function Home({ navigation }) {
-  const [UserName, SetUserName] = useState('Nome Do Usuario');
+  const [UserName, SetUserName] = useState('Nome Do Usuario');//usar com redux do login q n esta pronto
   const [nameOfProduct, setNameOfProduct] = useState("");
   const [amountOfProduct, setAmountOfProduct] = useState("");
   const [phenylalanineConsumed, setPhenylalanineConsumed] = useState("");
-  
   const [phenylalanineOfTheDay, setPhenylalanineOfTheDay] = useState(0);
   
   const [date, setDate] = useState(new Date().getTime()-(14400000));
@@ -24,8 +23,7 @@ export default function Home({ navigation }) {
   ]);
   
   const dispatch= useDispatch();
-  const { loading } = useSelector((state) => state.login);
-
+  //const {loading} = useSelector((state) => state.home);
 
 
   const changeBarPercent = (percentValue=42) => {
@@ -65,14 +63,12 @@ export default function Home({ navigation }) {
 
 
   function homeSendConsumption(){
-    console.log("entrou na homesendconsumption")
     dispatch(DataConsumptionRequest(nameOfProduct, amountOfProduct, phenylalanineConsumed, date));
-    console.log("loading",loading)
+    //console.log("loading "+loading);
   }
 
   return (
     <View style={{flex:1, backgroundColor:"#CDDCFE"}}>
-      <ScrollView style={{marginBottom:50}}>
         <View style={{ alignItems: 'center' }}>
           <Text style={{ fontSize: 25 }}>
             {UserName}
@@ -80,6 +76,8 @@ export default function Home({ navigation }) {
         </View>
 
         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }} />
+      <ScrollView style={{marginBottom:50}}>
+
 
         <View style={{ marginLeft: '10%', marginRight: '10%' }}>
           <Text style={{ fontSize: 25, textAlign: 'center' }}>
@@ -97,7 +95,7 @@ export default function Home({ navigation }) {
                 Data do consumo
               </Text>
               <View>
-                <TouchableOpacity style={{ height:40, backgroundColor: '#84AAFD'}} onPress={showDatepicker}>
+                <TouchableOpacity style={{shadowColor:'black',shadowOpacity:1, elevation:8, shadowRadius: 15, height:40, backgroundColor: '#1E90FF'}} onPress={showDatepicker}>
                   <Ionicons name="calendar-outline" size={40} color="black" style={{textAlign:"center"}}></Ionicons>
                 </TouchableOpacity>
                 {show && (
@@ -116,7 +114,7 @@ export default function Home({ navigation }) {
                 Hora do consumo
               </Text>
               <View>
-                <TouchableOpacity style={{ height:40, backgroundColor: '#84AAFD' }} onPress={showTimepicker}>
+                <TouchableOpacity style={{shadowColor:'black',shadowOpacity:1, elevation:8, shadowRadius: 15, height:40, backgroundColor: '#1E90FF' }} onPress={showTimepicker}>
                   <Ionicons name="time-outline" size={40} color="black" style={{textAlign:"center"}}></Ionicons>
                 </TouchableOpacity>
                 {show && (
@@ -159,7 +157,7 @@ export default function Home({ navigation }) {
         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginTop:'5%' }} />
         <View>
           <Text style={{ textAlign: 'center', fontSize: 25 }}>CONSUMIDOS HOJE</Text>
-            {products.map((dados)=><View style={styles.ViewOfList}><Text style={{fontSize:30 }}>{dados.productsName} {dados.TotalPhenylalanine}</Text></View>)}
+            {products.map((dados, index)=><View key={index} style={styles.ViewOfList}><Text style={{fontSize:30 }}>{dados.productsName} {dados.TotalPhenylalanine}</Text></View>)}
         </View>
       </ScrollView>
 

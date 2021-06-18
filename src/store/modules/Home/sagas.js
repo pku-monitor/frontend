@@ -4,10 +4,12 @@ import { api } from '../../../api'
 import { DataConsumptionRequestSucess, DataConsumptionRequestFailure } from "./actions";
 
 function* sendData({payload}) {
+    console.log("entrou sagas");
     try {
         const resultado = yield call(api.get, '/character')
         //console.log('API RESULTADO -', resultado)
-        yield put(DataConsumptionRequestSucess(resultado.data.results))
+        //yield put(DataConsumptionRequestSucess(resultado.data.results))
+        //yield put(DataConsumptionRequestSucess(resultado.data.results))
     } catch (e) {
         console.log(e)
         yield put(DataConsumptionRequestFailure())
