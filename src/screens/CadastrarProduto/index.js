@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-nativ
 import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 import {useDispatch, useSelector} from 'react-redux';
 import {SaveProductRequest} from '../../store/modules/Registro/actions.js'
+import { CenterAlign, Container, Txt, TxtTitle, Input, Button } from './styles.js';
 
 export default function CadastrarProduto({ navigation }) {
   const [UserName, SetUserName] = useState('Nome Do Usuario');
@@ -40,64 +41,66 @@ export default function CadastrarProduto({ navigation }) {
   }
 
   return (
-    <View style={{flex:1, backgroundColor:"#CDDCFE" }}>
+    <Container>
       <View>
-        <View style={{ alignItems: 'center' }}>
-          <Text style={{ fontSize: 25 }}>
+        <CenterAlign>
+          <Txt>
             {UserName}
-          </Text>
-        </View>
+          </Txt>
+        </CenterAlign>
         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }} />
 
         <View>
-          <Text style={{textAlign:"center", fontSize:30}}>
+          <TxtTitle>
             Cadastro de produto
-          </Text>
+          </TxtTitle>
         </View>
+
+{/* Arrumar isso, pois está em % */}
 
         <View style={{marginRight:"10%", marginLeft:"10%", marginTop:"5%"}}>
           <View style={{marginTop:"5%"}}>
-            <Text style={{fontSize:20}}>
+            <Txt>
               Nome do produto
-            </Text>
-            <TextInput value= {ProductsName} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleProductName}/>
+            </Txt>
+            <Input value= {ProductsName} onChangeText={handleProductName}/>
           </View>
 
-          <View style={{marginTop:"5%"}}>
-            <Text style={{fontSize:20}}>
+          <View>
+            <Txt>
               Fabricante do produto
-            </Text>
-            <TextInput value={ManufacturerName} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleManufacturerName} />
+            </Txt>
+            <Input value={ManufacturerName} onChangeText={handleManufacturerName} />
           </View>
 
-          <View style={{marginTop:"5%"}}>
-            <Text style={{fontSize:20}}>
+          <View>
+            <Txt>
               Unidade do produto
-            </Text>
-            <TextInput value={AmountOfProduct} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleAmountOfProduct} />
+            </Txt>
+            <Input value={AmountOfProduct} onChangeText={handleAmountOfProduct} />
           </View>
 
-          <View style={{marginTop:"5%"}}>
-            <Text style={{fontSize:20}}>
+          <View>
+            <Txt>
               Quantidade de Proteína por porção
-            </Text>
-            <TextInput value={AmountOfProtein} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleAmountOfProtein} />
+            </Txt>
+            <Input value={AmountOfProtein} onChangeText={handleAmountOfProtein} />
           </View>
 
-          <View style={{marginTop:"5%"}}>
-            <Text style={{fontSize:20}}>
+          <View>
+            <Txt>
               Quantidade Total de Fenilalanina
-            </Text>
-            <TextInput value={AmountOfPhenylalanine} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleAmountOfPhenylalanine} />
+            </Txt>
+            <Input value={AmountOfPhenylalanine} onChangeText={handleAmountOfPhenylalanine} />
           </View>
         </View>
 
-        <View style={{alignItems: 'center', marginTop:'12%'}}>
-            <TouchableOpacity onPress={RegisterSaveProduct} style={{ alignItems:'center', width:'50%', backgroundColor: '#84AAFD'}}>
-              <Text style={{fontSize:25}}>
+        <View style={{alignItems: 'center', marginTop:'10%'}}>
+            <Button onPress={RegisterSaveProduct}>
+              <Txt>
                 CADASTRAR
-              </Text>
-            </TouchableOpacity>
+              </Txt>
+            </Button>
           </View>
       </View>
 
@@ -120,7 +123,7 @@ export default function CadastrarProduto({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </Container>
   );
 }
 
