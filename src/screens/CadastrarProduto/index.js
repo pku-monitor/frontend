@@ -3,7 +3,11 @@ import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView, Modal,
 import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 import {useDispatch, useSelector} from 'react-redux';
 import {SaveProductRequest} from '../../store/modules/Registro/actions.js'
+<<<<<<< HEAD
+import { CenterAlign, Container, Txt, TxtTitle, Input, Button } from './styles.js';
+=======
 import { BarCodeScanner } from 'expo-barcode-scanner';
+>>>>>>> develop
 
 export default function CadastrarProduto({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);//controlador modal
@@ -71,6 +75,12 @@ export default function CadastrarProduto({ navigation }) {
 
 
   return (
+<<<<<<< HEAD
+    <Container>
+      <View>
+        <CenterAlign>
+          <Txt>
+=======
     <View style={{flex:1, backgroundColor:"#CDDCFE" }}>
         <Modal transparent={true}
           visible={modalVisible} 
@@ -98,18 +108,33 @@ export default function CadastrarProduto({ navigation }) {
 
         <View style={{ alignItems: 'center' }}>
           <Text style={{ fontSize: 25 }}>
+>>>>>>> develop
             {UserName}
-          </Text>
-        </View>
+          </Txt>
+        </CenterAlign>
         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }} />
       <ScrollView>
 
         <View>
-          <Text style={{textAlign:"center", fontSize:30}}>
+          <TxtTitle>
             Cadastro de produto
-          </Text>
+          </TxtTitle>
         </View>
 
+<<<<<<< HEAD
+{/* Arrumar isso, pois está em % */}
+
+        <View style={{marginRight:"10%", marginLeft:"10%", marginTop:"5%"}}>
+          <View style={{marginTop:"5%"}}>
+            <Txt>
+              Nome do produto
+            </Txt>
+            <Input value= {ProductsName} onChangeText={handleProductName}/>
+          </View>
+
+          <View>
+            <Txt>
+=======
         <View style={{alignItems:'center'}}>
           <TouchableOpacity onPress={()=>setModalVisible(true)}>
             <AntDesign name="barcode" size={75} color="black" />
@@ -126,11 +151,33 @@ export default function CadastrarProduto({ navigation }) {
 
           <View style={{marginTop:"5%"}}>
             <Text style={{fontSize:20, textAlign:'center'}}>
+>>>>>>> develop
               Fabricante do produto
-            </Text>
-            <TextInput value={ManufacturerName} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleManufacturerName} />
+            </Txt>
+            <Input value={ManufacturerName} onChangeText={handleManufacturerName} />
           </View>
 
+<<<<<<< HEAD
+          <View>
+            <Txt>
+              Unidade do produto
+            </Txt>
+            <Input value={AmountOfProduct} onChangeText={handleAmountOfProduct} />
+          </View>
+
+          <View>
+            <Txt>
+              Quantidade de Proteína por porção
+            </Txt>
+            <Input value={AmountOfProtein} onChangeText={handleAmountOfProtein} />
+          </View>
+
+          <View>
+            <Txt>
+              Quantidade Total de Fenilalanina
+            </Txt>
+            <Input value={AmountOfPhenylalanine} onChangeText={handleAmountOfPhenylalanine} />
+=======
           <View style={{marginTop:"5%"}}>
             <Text style={{fontSize:20, textAlign:'center'}}>
               Unidade do produto
@@ -150,14 +197,21 @@ export default function CadastrarProduto({ navigation }) {
               Quantidade Total de Fenilalanina
             </Text>
             <TextInput onFocus={()=>SetAmountOfPhenylalanine('')} keyboardType='numeric' value={AmountOfPhenylalanine} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleAmountOfPhenylalanine} />
+>>>>>>> develop
           </View>
 
+<<<<<<< HEAD
+        <View style={{alignItems: 'center', marginTop:'10%'}}>
+            <Button onPress={RegisterSaveProduct}>
+              <Txt>
+=======
           <View style={{alignItems: 'center', marginTop:'12%'}}>
             <TouchableOpacity onPress={RegisterSaveProduct} style={{ alignItems:'center', width:'50%', backgroundColor: '#84AAFD'}}>
               <Text style={{fontSize:25}}>
+>>>>>>> develop
                 CADASTRAR
-              </Text>
-            </TouchableOpacity>
+              </Txt>
+            </Button>
           </View>
         </View>
       </ScrollView>
@@ -181,7 +235,7 @@ export default function CadastrarProduto({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+    </Container>
   );
 }
 

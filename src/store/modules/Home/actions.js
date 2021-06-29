@@ -8,11 +8,8 @@ export function DataConsumptionRequest(nameOfProduct, amountOfProduct, amountOfP
     }
 }
 
-export function DataConsumptionRequestSucess(data){
-    return{
-        type: homeActionTypes.SEND_CONSUMITION_DATA_SUCESS,
-        payload: {data},
-    }
+export function DataConsumptionRequestSucess(){
+    
 }
 
 export function DataConsumptionRequestFailure(){
