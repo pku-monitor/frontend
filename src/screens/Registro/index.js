@@ -3,7 +3,6 @@ import { StatusBar } from 'react-native';
 import { Container, Txt, Button, TxtButton, Input } from '../Login/styles';
 
 const Registro = ({ navigation }) => {
-  
     return(
         <Container>
         <Txt>Tela</Txt>
