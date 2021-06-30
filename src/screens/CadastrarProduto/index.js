@@ -185,6 +185,7 @@ export default function CadastrarProduto({ navigation }) {
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     bottom: 0,

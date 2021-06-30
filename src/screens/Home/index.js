@@ -61,6 +61,7 @@ export default function Home({ navigation }) {
     setAmountOfProduct(value);
   }
 
+  
 
   function homeSendConsumption(){
     dispatch(DataConsumptionRequest(nameOfProduct, amountOfProduct, phenylalanineConsumed, date));

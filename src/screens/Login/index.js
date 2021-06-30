@@ -38,10 +38,10 @@ const Login = ({ navigation }) => {
                 <TxtButton>Entrar</TxtButton>
               </Button>
               <Button onPress={() => navigation.navigate('CadastrarProduto')}>
-                <TxtButton>Login Screen -{'>'} Registro Screen</TxtButton>
+                <TxtButton>Registrar{'-'}se</TxtButton>
               </Button>
               <Button onPress={() => navigation.navigate('RecuperarSenha')}>
-                <TxtButton>Login Screen -{'>'} RecuperarSenha Screen</TxtButton>
+                <TxtButton>Recuperar Senha</TxtButton>
               </Button>
               <StatusBar marginTop = {'auto'}></StatusBar>
               {/*{personagens.map((personagem) => <TxtButton>{personagem.name}</TxtButton>)}*/}
