@@ -9,7 +9,7 @@ const Historico = ({ navigation }) => {
         <Txt>de</Txt>
         <Txt>Histórico</Txt>
         <Button onPress={() => navigation.navigate('Home')}>
-          <TxtButton>Historico Screen -{'>'} Home Screen</TxtButton>
+          <TxtButton>Voltar</TxtButton>
         </Button>
         </Container>
 
