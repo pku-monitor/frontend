@@ -138,6 +138,8 @@ export default function CadastrarProduto({ navigation }) {
     </Container>
   );
 }
+
+
 const styles = StyleSheet.create({
   container: {
     bottom: 0,

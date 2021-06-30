@@ -3,6 +3,7 @@ import { View, TouchableOpacity, StyleSheet, Text, ScrollView } from 'react-nati
 import { Entypo, Ionicons,AntDesign } from "@expo/vector-icons";
 import { Container, Txt, TxtUser } from './styles';
 
+
 export default function InfoApp({ navigation }) {
   const [UserName, SetUserName]= useState('Nome Do Usuario');
     return(

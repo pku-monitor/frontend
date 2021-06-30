@@ -38,17 +38,13 @@ const Login = ({ navigation }) => {
               <Button onPress={handleSignIn}>
                 <TxtButton>Entrar</TxtButton>
               </Button>
-<<<<<<< HEAD
               */}
               <Button onPress={() => navigation.navigate('Home')}>
                 <TxtButton>Entrar</TxtButton>
               </Button>
               <Button onPress={() => navigation.navigate('Registro')}>
                 <TxtButton>Registrar{'-'}se</TxtButton>
-=======
-              <Button onPress={() => navigation.navigate('CadastrarProduto')}>
-                <TxtButton>Login Screen -{'>'} Registro Screen</TxtButton>
->>>>>>> develop
+
               </Button>
               <Button onPress={() => navigation.navigate('RecuperarSenha')}>
                 <TxtButton>Recuperar Senha</TxtButton>

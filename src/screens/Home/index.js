@@ -62,6 +62,7 @@ export default function Home({ navigation }) {
     setAmountOfProduct(value);
   }
 
+  
 
   function homeSendConsumption(){
     console.log("entrou na homesendconsumption")
