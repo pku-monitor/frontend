@@ -5,7 +5,7 @@ import { Entypo, Ionicons,AntDesign } from "@expo/vector-icons";
 export default function InfoApp({ navigation }) {
   const [UserName, SetUserName]= useState('Nome Do Usuario');
     return(
-      <View style={{flex: 1, backgroundColor:"#CDDCFE"}}>
+      <View style={{flex: 1, backgroundColor:'lightblue'}}>
         <ScrollView>
           <View style={{alignItems:'center'}}>
             <Text style={{fontSize:25}}>
