@@ -69,7 +69,6 @@ export default function CadastrarProduto({ navigation }) {
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
   };
 
-
   return (
     <View style={{flex:1, backgroundColor:"#CDDCFE" }}>
         <Modal transparent={true}

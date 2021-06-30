@@ -61,12 +61,12 @@ export default function Home({ navigation }) {
     setAmountOfProduct(value);
   }
 
-
   function homeSendConsumption(){
     dispatch(DataConsumptionRequest(nameOfProduct, amountOfProduct, phenylalanineConsumed, date));
     //console.log("loading "+loading);
   }
 
+  
   return (
     <View style={{flex:1, backgroundColor:"#CDDCFE"}}>
         <View style={{ alignItems: 'center' }}>

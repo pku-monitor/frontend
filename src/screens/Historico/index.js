@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { Container, Txt, Button, TxtButton } from '../Login/styles';
 
+
 const Historico = ({ navigation }) => {
     return(
         <Container>

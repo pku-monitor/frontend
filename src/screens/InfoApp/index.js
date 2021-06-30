@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet, Text, ScrollView } from 'react-native';
 import { Entypo, Ionicons,AntDesign } from "@expo/vector-icons";
 
+
+
 export default function InfoApp({ navigation }) {
   const [UserName, SetUserName]= useState('Nome Do Usuario');
     return(

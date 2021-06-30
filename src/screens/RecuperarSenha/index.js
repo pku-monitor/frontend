@@ -2,6 +2,7 @@ import React from 'react';
 import { StatusBar} from 'react-native';
 import { Container, Txt, Button, TxtButton, Input } from '../Login/styles';
 
+
 const RecuperarSenha = ({ navigation }) => {
     return(
         <Container>
