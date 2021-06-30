@@ -6,9 +6,7 @@ const Registro = ({ navigation }) => {
   
     return(
         <Container>
-        <Txt>Tela</Txt>
-        <Txt>de</Txt>
-        <Txt>Registro</Txt>
+        <Txt>Registrar{'-'}se</Txt>
         <Input
         placeholder = "Digite seu nome">
         </Input>
@@ -25,7 +23,7 @@ const Registro = ({ navigation }) => {
         keyboardType = "password" placeholder = "Confirme sua senha">
         </Input>
         <Button onPress={() => navigation.navigate('Login')}>
-          <TxtButton>Registro Screen -{'>'} Login Screen</TxtButton>
+          <TxtButton>Concluído</TxtButton>
         </Button>
         <StatusBar marginTop = {'auto'}></StatusBar>
         </Container>

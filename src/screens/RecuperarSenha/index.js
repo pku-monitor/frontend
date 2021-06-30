@@ -6,8 +6,6 @@ const RecuperarSenha = ({ navigation }) => {
   
     return(
         <Container>
-        <Txt>Tela</Txt>
-        <Txt>de</Txt>
         <Txt>Recuperar Senha</Txt>
         <Input
         keyboardType = "email-address" placeholder = "Digite seu e-mail">
@@ -19,7 +17,7 @@ const RecuperarSenha = ({ navigation }) => {
         placeholder = "Confirme sua senha">
         </Input>
         <Button onPress={() => navigation.navigate('Login')}>
-          <TxtButton>RecuperarSenha Screen -{'>'} Login Screen</TxtButton>
+          <TxtButton>Concluído</TxtButton>
         </Button>
         <StatusBar marginTop = {'auto'}></StatusBar>
         </Container>

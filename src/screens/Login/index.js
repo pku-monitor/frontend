@@ -34,11 +34,17 @@ const Login = ({ navigation }) => {
               <Input value = {username} onChangeText = {handleUsername} keyboardType = "email-address" placeholder = "Digite seu e-mail"></Input>
               <Input value = {password} onChangeText = {handlePassword} placeholder = "Digite sua senha"></Input>
               {loading && <ActivityIndicator size = "large" color = "red" />}
+              {/*
               <Button onPress={handleSignIn}>
                 <TxtButton>Entrar</TxtButton>
               </Button>
-              <Button onPress={() => navigation.navigate('CadastrarProduto')}>
+              */}
+              <Button onPress={() => navigation.navigate('Home')}>
+                <TxtButton>Entrar</TxtButton>
+              </Button>
+              <Button onPress={() => navigation.navigate('Registro')}>
                 <TxtButton>Registrar{'-'}se</TxtButton>
+
               </Button>
               <Button onPress={() => navigation.navigate('RecuperarSenha')}>
                 <TxtButton>Recuperar Senha</TxtButton>

@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet, Text, ScrollView } from 'react-native';
 import { Entypo, Ionicons,AntDesign } from "@expo/vector-icons";
+import { Container, Txt, TxtUser } from './styles';
 
 
 export default function InfoApp({ navigation }) {
   const [UserName, SetUserName]= useState('Nome Do Usuario');
     return(
-      <View style={{flex: 1, backgroundColor:"#CDDCFE"}}>
+      <Container>
         <ScrollView>
           <View style={{alignItems:'center'}}>
-            <Text style={{fontSize:25}}>
+            <TxtUser>
               {UserName}
-            </Text>
+            </TxtUser>
           </View>
 
           <View style={{borderBottomColor: 'black', borderBottomWidth: 1}}/>
 
-          <Text style={{textAlign:'center', fontSize:40}}>Sobre o APP</Text>
+          <Txt>Sobre o APP </Txt>
 
           <Text style={{fontSize:25}}>
             (DESCRIÇAO)
@@ -42,7 +43,7 @@ export default function InfoApp({ navigation }) {
               </TouchableOpacity>
             </View>
           </View>
-      </View>
+      </Container>
     )
 }
 
