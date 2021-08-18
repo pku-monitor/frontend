@@ -4,7 +4,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
 
-export default function AppBarScanner({value}) {
+export default function AppBarScanner({handleValue}) {
   const [modalVisible, setModalVisible] = useState(false);
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -19,6 +19,7 @@ export default function AppBarScanner({value}) {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    handleValue(data)
   };
 
   return (

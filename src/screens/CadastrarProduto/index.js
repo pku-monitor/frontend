@@ -55,6 +55,9 @@ export default function CadastrarProduto({ navigation }) {
     SetAmountOfPhenylalanine(value);
   }
 
+  function handleValue(value) {
+    console.log(value)
+  }
   
   return (
     <View style={{flex:1, backgroundColor:"#CDDCFE" }}>
@@ -73,7 +76,7 @@ export default function CadastrarProduto({ navigation }) {
           </AppText>
         </View>
 
-        <AppBarScanner/>
+        <AppBarScanner handleValue={(valorBARCODE) => handleValue(valorBARCODE)}/>
 
         <View style={{marginRight:"10%", marginLeft:"10%"}}>
           <View>
