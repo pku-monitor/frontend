@@ -10,7 +10,6 @@ const Login = ({ navigation }) => {
   const { loading, personagens } = useSelector((state) => state.login)
 
   //console.log('Loading', loading)
-  console.log('PERSONAGENS', personagens)
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')

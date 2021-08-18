@@ -1,10 +1,9 @@
 import {homeActionTypes} from './actions.types.js'
 
-export function DataConsumptionRequest(nameOfProduct, amountOfProduct, amountOfPhenylalanine, consumptionTime){
-    console.log("entrou na action")
+export function DataConsumptionRequest(nameOfProduct, amountOfProduct, amountOfPhenylalanine/*, consumptionTime*/){
     return{
         type: homeActionTypes.SEND_CONSUMITION_DATA_REQUEST,
-        payload: {nameOfProduct, amountOfProduct, amountOfPhenylalanine, consumptionTime},
+        payload: {nameOfProduct, amountOfProduct, amountOfPhenylalanine/*, consumptionTime*/},
     }
 }
 
