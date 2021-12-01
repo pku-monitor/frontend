@@ -71,6 +71,10 @@ ele intercepta o objeto com o campo type == homeActionTypes.SEND_SUGGESTION_PROD
 
 ![Diretorio](https://github.com/EricAKPM/PKU/blob/gh-pages/imagensPKU/Diretorio.png)
 
-Screen ficam as telas e components ficam os componentes usados em varias telas, como calendario leitor de codigo de barra e tambem estilos que sao prodronizados, como botoes, textos e etc.
+Em Screen ficam as telas e components, components ficam os componentes usados em varias telas, como calendario,  leitor de codigo de barra e tambem estilos que sao prodronizados, como botoes, textos e etc.
 
-Store as actions, saga e reducer
+Store sao as actions, saga e reducer
+
+route ficam a navigation, que eh a controla a navegacao entre as telas
+
+api fica o endereco do back end
