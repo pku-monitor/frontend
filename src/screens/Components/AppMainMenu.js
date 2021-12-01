@@ -31,10 +31,7 @@ export default function AppMainMenu() {
 
 const styles = StyleSheet.create({
     container: {
-      bottom: '0%',
       height: '8%',
-      zIndex: 1,
-      position: 'absolute',
       backgroundColor: 'white',
       borderColor: 'gray',
       borderWidth: 1,

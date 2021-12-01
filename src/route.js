@@ -4,7 +4,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './screens/Login';
 import RegistroScreen from './screens/Registro';
 import RecuperarSenhaScreen from './screens/RecuperarSenha';
-
 import HomeScreen from './screens/Home';
 import CadastrarProdutoScreen from './screens/CadastrarProduto';
 import HistoricoScreen from './screens/Historico';

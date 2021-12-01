@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { View, TouchableOpacity, StyleSheet, Modal } from 'react-native';
 import { AppButton, AppText } from './styles'
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-export default function AppTimePicker(props) {
+export default function AppTimePicker({props}) {
     const [mode, setMode] = useState('date');
     const [date, setDate] = useState(new Date());
     const [show, setShow] = useState(false);
+
     const onChange = (event, selectedDate) => {
         const currentDate = selectedDate || date;
         setShow(Platform.OS === 'ios');
         setDate(currentDate);
     };
 
+
+    
     const showMode = (currentMode) => {
         setShow(true);
         setMode(currentMode);
@@ -23,7 +26,7 @@ export default function AppTimePicker(props) {
     };
 
     const settingValue = () => {
-        props.value=date.getDate() < 10 ? "0" + date.getDate() : date.getDate()+"/"+(date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)+"/"+date.getFullYear() < 10 ? "0" + date.getFullYear() : date.getFullYear();
+        
     };
 
 
