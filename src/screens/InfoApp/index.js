@@ -5,17 +5,17 @@ import AppMainMenu from '../Components/AppMainMenu';
 export default function InfoApp({ navigation }) {
   const [UserName, SetUserName]= useState('Nome Do Usuario');
     return(
-      <View>
+      <View style={{flex: 1, backgroundColor:"#CDDCFE"}}>
         <ScrollView>
           <View style={{alignItems:'center'}}>
-            <TxtUser>
+            <Text style={{fontSize:25}}>
               {UserName}
-            </TxtUser>
+            </Text>
           </View>
 
           <View style={{borderBottomColor: 'black', borderBottomWidth: 1}}/>
 
-          <Txt>Sobre o APP </Txt>
+          <Text style={{textAlign:'center', fontSize:40}}>Sobre o APP</Text>
 
           <Text style={{fontSize:25}}>
             (DESCRIÇAO)

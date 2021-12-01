@@ -33,20 +33,14 @@ const Login = ({ navigation }) => {
               <Input value = {username} onChangeText = {handleUsername} keyboardType = "email-address" placeholder = "Digite seu e-mail"></Input>
               <Input value = {password} onChangeText = {handlePassword} placeholder = "Digite sua senha"></Input>
               {loading && <ActivityIndicator size = "large" color = "red" />}
-              {/*
               <Button onPress={handleSignIn}>
                 <TxtButton>Entrar</TxtButton>
               </Button>
-              */}
-              <Button onPress={() => navigation.navigate('Home')}>
-                <TxtButton>Entrar</TxtButton>
-              </Button>
-              <Button onPress={() => navigation.navigate('Registro')}>
-                <TxtButton>Registrar{'-'}se</TxtButton>
-
+              <Button onPress={() => navigation.navigate('CadastrarProduto')}>
+                <TxtButton>Login Screen -{'>'} Registro Screen</TxtButton>
               </Button>
               <Button onPress={() => navigation.navigate('RecuperarSenha')}>
-                <TxtButton>Recuperar Senha</TxtButton>
+                <TxtButton>Login Screen -{'>'} RecuperarSenha Screen</TxtButton>
               </Button>
               <StatusBar marginTop = {'auto'}></StatusBar>
               {/*{personagens.map((personagem) => <TxtButton>{personagem.name}</TxtButton>)}*/}
