@@ -36,6 +36,9 @@ Apos iniciar, abrira uma guia no navegador, entao escolha visualizar o aplicativ
  
  Escaneie o QRCode 
 
-# ARQUITETURA FLUX
+# REACT NATIVE USA A ARQUITETURA FLUX
 
 https://medium.com/engenharia-arquivei/arquitetura-flux-26a419871ade
+
+# PROJETO
+![Diretorio](https://github.com/EricAKPM/PKU/blob/gh-pages/imagensPKU/Arquitetura.png)
