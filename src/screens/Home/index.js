@@ -31,7 +31,7 @@ export default function Home({ navigation }) {
   function homeSendConsumption(){
     if(nameOfProduct!="" || amountOfProduct!=""){
       setPhenylalanineOfTheDay(phenylalanineOfTheDay+amountOfProduct*0.1);
-      dispatch(DataConsumptionRequest(nameOfProduct, amountOfProduct, phenylalanineConsumed, NaturalProduct, TimeConsumed));//add date
+      dispatch(DataConsumptionRequest(nameOfProduct, amountOfProduct, phenylalanineConsumed, NaturalProduct));//add date
       setNameOfProduct("");
       setAmountOfProduct("");
     }
