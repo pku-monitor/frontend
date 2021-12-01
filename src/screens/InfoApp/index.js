@@ -5,7 +5,7 @@ import AppMainMenu from '../Components/AppMainMenu';
 export default function InfoApp({ navigation }) {
   const [UserName, SetUserName]= useState('Nome Do Usuario');
     return(
-      <Container>
+      <View>
         <ScrollView>
           <View style={{alignItems:'center'}}>
             <TxtUser>
