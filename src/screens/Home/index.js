@@ -8,7 +8,6 @@ import AppTimePickerTimer from '../Components/AppTimePickerTimer';
 import {AppButton, AppText, AppInput, AppSeparator} from '../Components/styles'
 import {ViewOfList} from './styles'
 import { Ionicons } from '@expo/vector-icons'; 
-import MultiSelect from 'react-native-multiple-select'; //deletar
 
 export default function Home({ navigation }) {
   const [UserName, SetUserName] = useState('Nome Do Usuario');
@@ -17,9 +16,6 @@ export default function Home({ navigation }) {
   const [phenylalanineConsumed, setPhenylalanineConsumed] = useState("");
   const [phenylalanineOfTheDay, setPhenylalanineOfTheDay] = useState(0);
   const [NaturalProduct, setNaturalProduct] = useState(true);
-
-  const [dateCalendar, setDateCalendar] = useState(new Date());
-  const [dateTimer, setdateTimer] = useState(new Date);
   
   const dispatch= useDispatch();
   const {products, loading, suggestionList} = useSelector((state) => state.home);
