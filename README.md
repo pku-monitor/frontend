@@ -44,6 +44,8 @@ https://medium.com/engenharia-arquivei/arquitetura-flux-26a419871ade
 
 Na tela eh chamado o hook chamado dispatch, entao eh chamado a funcao (uma action) **DataProductSuggestionRequest** que monta um objeto para ser passado para o hook. A action monta um objeto com dois campos(nesse caso), type e payload. Entao a funcao **DataProductSuggestionRequest** retorna esse objeto e o hook chama o reducer
 
+OBS: O nome dos types sao definido em Action Types, por organizacao
+
 No reducer ha um switch que usa o campo type do objeto passado para escolher qual codigo executar, e o payload sao os dados que serao atualizados.
 
 Quando um switch eh executado o saga intercepta ele e executa determinada funcao, por exemplo:
@@ -56,11 +58,11 @@ ele intercepta o objeto com o campo type == homeActionTypes.SEND_SUGGESTION_PROD
 ### Action
 ![action](https://github.com/EricAKPM/PKU/blob/gh-pages/imagensPKU/action.png)
 
+### Action Types
+![types](https://github.com/EricAKPM/PKU/blob/gh-pages/imagensPKU/action%20types.png)
+
 ### Reducer
 ![reducer](https://github.com/EricAKPM/PKU/blob/gh-pages/imagensPKU/reducer.png)
-
-### 
-![image](https://user-images.githubusercontent.com/64378964/144171992-295cc8a2-32f6-44ee-9978-e0fd5ababd08.png)
 
 ### Sagas
 ![sagas](https://github.com/EricAKPM/PKU/blob/gh-pages/imagensPKU/sagas.png)
@@ -71,3 +73,4 @@ ele intercepta o objeto com o campo type == homeActionTypes.SEND_SUGGESTION_PROD
 
 Screen ficam as telas e components ficam os componentes usados em varias telas, como calendario leitor de codigo de barra e tambem estilos que sao prodronizados, como botoes, textos e etc.
 
+Store as actions, saga e reducer
