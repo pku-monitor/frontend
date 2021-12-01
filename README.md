@@ -75,6 +75,6 @@ Em Screen ficam as telas e components, components ficam os componentes usados em
 
 Store sao as actions, saga e reducer
 
-route ficam a navigation, que eh a controla a navegacao entre as telas
+route ficam a navigation, que controla a navegacao entre as telas
 
 api fica o endereco do back end
