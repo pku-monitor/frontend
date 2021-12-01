@@ -2,11 +2,12 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
     flex: 1;
-    background-color: lightblue;
+    background-color: #CDDCFE;
     align-items: center; 
     justify-content: center; 
 `;
 
+/*
 export const Button = styled.TouchableOpacity`
     background-color: grey;
     width: 150px;
@@ -16,6 +17,16 @@ export const Button = styled.TouchableOpacity`
     margin-top: 10px;
     align-items: center; 
     justify-content: center; 
+`;
+*/
+
+export const Button = styled.TouchableOpacity`
+  alignItems: center;
+  justify-content: center; 
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 150px;
+  backgroundColor: #84AAFD;
 `;
 
 export const Txt = styled.Text`

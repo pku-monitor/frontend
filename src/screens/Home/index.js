@@ -11,7 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import MultiSelect from 'react-native-multiple-select'; //deletar
 
 export default function Home({ navigation }) {
-  const [UserName, SetUserName] = useState('Nome Do Usuario');//usar com redux do login q n esta pronto
+  const [UserName, SetUserName] = useState('Nome Do Usuario');
   const [nameOfProduct, setNameOfProduct] = useState("");
   const [amountOfProduct, setAmountOfProduct] = useState("");
   const [phenylalanineConsumed, setPhenylalanineConsumed] = useState("");

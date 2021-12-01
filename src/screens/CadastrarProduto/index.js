@@ -8,15 +8,15 @@ import AppBarScanner from '../Components/AppBarScanner.js';
 import {AppSeparator, AppText, AppInput, AppButton} from '../Components/styles'
 
 
-export default function CadastrarProduto({ navigation }) {
 
+
+export default function CadastrarProduto({ navigation }) {
   const [UserName, SetUserName] = useState('Nome Do Usuario');
   const [ProductsName, SetproductsName] = useState('');
   const [ManufacturerName, SetManufacturerName] = useState('');
   const [AmountOfProduct, SetAmountOfProduct] = useState('');
   const [AmountOfProtein, SetAmountOfProtein] = useState('');
   const [AmountOfPhenylalanine, SetAmountOfPhenylalanine] = useState('');
-
   const dispatch= useDispatch();
   //const {UserName} = useSelector(state => state.Login); quando terminar login
   
@@ -24,24 +24,19 @@ export default function CadastrarProduto({ navigation }) {
     console.log(ProductsName);
     dispatch(SaveProductRequest(ProductsName, ManufacturerName, AmountOfProduct, AmountOfProtein, AmountOfPhenylalanine));
   }
-
   function handleProductName(value){
     SetproductsName(value)
   }
-
   function handleManufacturerName(value){
     SetManufacturerName(value);
   }
-
   function handleAmountOfProduct(value){
     SetAmountOfProduct(value);
   }
-
   function handleAmountOfProtein(value){
     SetAmountOfProtein(value);
     calculatingAmountOfPhenylalanine(value);
   }
-
   function calculatingAmountOfPhenylalanine(value){
     if(value!=''){
       const att=parseInt(value)*50;
@@ -50,7 +45,6 @@ export default function CadastrarProduto({ navigation }) {
       SetAmountOfPhenylalanine('')
     }
   }
-
   function handleAmountOfPhenylalanine(value){
     SetAmountOfPhenylalanine(value);
   }

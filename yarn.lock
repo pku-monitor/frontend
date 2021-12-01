@@ -3224,13 +3224,6 @@ expo-asset@~8.2.1:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
-expo-barcode-scanner@~9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/expo-barcode-scanner/-/expo-barcode-scanner-9.1.0.tgz#c699c2ef99478b0ea484a1ccc1f60562f60a3663"
-  integrity sha512-gf2MGw9Hs8cH0Xz+JdPSHg9mHxR46acENg3eh1dMsXbJyGCbmLIzvlQhBW7f2Cuqcx7Q30kGF91wzaK+VVUEoQ==
-  dependencies:
-    lodash "^4.6.0"
-
 expo-constants@~9.3.3:
   version "9.3.5"
   resolved "https://registry.npmjs.org/expo-constants/-/expo-constants-9.3.5.tgz"
@@ -3246,6 +3239,11 @@ expo-error-recovery@~1.4.0:
   integrity sha512-NIXHe7oVfosFw/ZNZr9NBo5XJ6CmsGeK6ozldvN+RTSISmJmn+MZ3PAHuFZxLjCkOQe20J4g3S+F6aMkcD949Q==
   dependencies:
     fbjs "1.0.0"
+
+expo-facebook@~9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/expo-facebook/-/expo-facebook-9.1.0.tgz#8c8bbe33ec292b26b827c355d7fa6ef5445af83c"
+  integrity sha512-DoqzqAQkEYVViAShV122Cll2WWubEKLyOxRO8yDYFMbst4EH7Ep8NPCKcHKgXFYh8Oi+JYSdhsdpMraahmcX8A==
 
 expo-file-system@~9.3.0:
   version "9.3.0"

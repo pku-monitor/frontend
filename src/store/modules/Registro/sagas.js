@@ -6,7 +6,7 @@ import { SaveProductSucess, SaveProductFailure } from "./actions";
 function* registerProd({payload}) {
     try {
         const resultado = yield call(api.get, '/character')
-        //console.log('API RESULTADO -', resultado.data.results)
+        //console.log('API RESULTADO -', resultado)
         yield put(SaveProductSucess(resultado.data.results))
     } catch (e) {
         console.log(e)

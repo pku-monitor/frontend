@@ -7,11 +7,8 @@ export function SaveProductRequest(ProductsName, ManufacturerName, AmountOfProdu
     }
 }
 
-export function SaveProductSucess(data){
-    return{
-        type: RegisterTypes.REGISTER_PRODUCT_REQUEST,
-        payload: {data},
-    }
+export function SaveProductSucess(){
+    
 }
 
 export function SaveProductFailure(){
