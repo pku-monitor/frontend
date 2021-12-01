@@ -35,3 +35,7 @@ Apos iniciar, abrira uma guia no navegador, entao escolha visualizar o aplicativ
  Baixe o expo na play store
  
  Escaneie o QRCode 
+
+# ARQUITETURA FLUX
+
+https://medium.com/engenharia-arquivei/arquitetura-flux-26a419871ade
