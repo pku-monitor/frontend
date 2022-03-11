@@ -1,58 +1,28 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-    flex: 1;
-    background-color: #CDDCFE;
-    align-items: center; 
-    justify-content: center; 
-`;
+export const LAppContainer = styled.Input`
+  position: absolute;
+  width: 360px;
+  height: 170px;
+  left: 0px;
+  top: 0px;
+  background: #C8F5EE;
+  border-radius: 0px 0px 0px 35px`;
 
-/*
-export const Button = styled.TouchableOpacity`
-    background-color: grey;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    align-items: center; 
-    justify-content: center; 
-`;
-*/
-
-export const Button = styled.TouchableOpacity`
-  alignItems: center;
-  justify-content: center; 
-  margin-bottom: 10px;
-  margin-top: 10px;
-  width: 150px;
-  backgroundColor: #84AAFD;
-`;
-
-export const Txt = styled.Text`
-    font-size: 30px;
-    font-family: 'monospace';
-    font-weight: bold;
-`;
-
-export const TxtButton = styled.Text`
-  color: #FFF;
-  font-weight: bold;
-  justify-content: center;    
-  align-items: center; 
-`;
-
-export const Input = styled.TextInput`
-  height: 45px;
+export const LAppInput = styled.Input`
+  position: absolute;
   width: 320px;
-  background-color: #FFF;
-  border-radius: 5px;
-  border-color: #EEE;
-  border-width: 1px;
-  padding-left: 10px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  align-items: center;
-  justify-content: center; 
-`;
+  height: 40px;
+  left: calc(50% - 320px/2);
+  top: calc(50% - 40px/2 - 76px);
+  background: #FFFFFF;
+  border-radius: 50px`;
 
+export const LAppSubmit =  styled.Button`
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: #11134A;
+  border-radius: 50px`;

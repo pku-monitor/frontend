@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StatusBar, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInRequest } from '../../store/modules/Login/actions';
-import { Container, Button, Txt, TxtButton, Input } from './styles';
+import { LAppContainer, LAppSubmit, LAppInput } from './styles';
 
-const Login = ({ navigation }) => {
+export default function Login({ navigation }){
 
   const dispatch = useDispatch();
   const { loading, personagens } = useSelector((state) => state.login)
@@ -27,25 +27,11 @@ const Login = ({ navigation }) => {
   }
 
   return (
-            <Container>
-              <Txt>PKU</Txt>
-              <Txt>Monitor</Txt>
-              <Input value = {username} onChangeText = {handleUsername} keyboardType = "email-address" placeholder = "Digite seu e-mail"></Input>
-              <Input value = {password} onChangeText = {handlePassword} placeholder = "Digite sua senha"></Input>
-              {loading && <ActivityIndicator size = "large" color = "red" />}
-              <Button onPress={handleSignIn}>
-                <TxtButton>Entrar</TxtButton>
-              </Button>
-              <Button onPress={() => navigation.navigate('CadastrarProduto')}>
-                <TxtButton>Login Screen -{'>'} Registro Screen</TxtButton>
-              </Button>
-              <Button onPress={() => navigation.navigate('RecuperarSenha')}>
-                <TxtButton>Login Screen -{'>'} RecuperarSenha Screen</TxtButton>
-              </Button>
-              <StatusBar marginTop = {'auto'}></StatusBar>
-              {/*{personagens.map((personagem) => <TxtButton>{personagem.name}</TxtButton>)}*/}
-            </Container>
-        )
+    <View>
+      <LAppContainer>
+        <LAppInput/>
+        <LAppSubmit/>
+      </LAppContainer>
+    </View>
+  )
 }
-
-export default Login;
