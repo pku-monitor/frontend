@@ -1,48 +1,29 @@
 import React, { useState } from 'react';
-import { View, TouchableOpacity, StyleSheet, Text, ScrollView } from 'react-native';
-import { Entypo, Ionicons,AntDesign } from "@expo/vector-icons";
-import { Container, Txt, TxtUser } from './styles';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
+import AppMainMenu from '../Components/AppMainMenu';
 
 export default function InfoApp({ navigation }) {
   const [UserName, SetUserName]= useState('Nome Do Usuario');
     return(
-      <Container>
+      <View style={{flex: 1, backgroundColor:"#CDDCFE"}}>
         <ScrollView>
           <View style={{alignItems:'center'}}>
-            <TxtUser>
+            <Text style={{fontSize:25}}>
               {UserName}
-            </TxtUser>
+            </Text>
           </View>
 
           <View style={{borderBottomColor: 'black', borderBottomWidth: 1}}/>
 
-          <Txt>Sobre o APP </Txt>
+          <Text style={{textAlign:'center', fontSize:40}}>Sobre o APP</Text>
 
           <Text style={{fontSize:25}}>
             (DESCRIÇAO)
           </Text>
         </ScrollView>
 
-          <View style={styles.container}>
-            <View style={{ marginLeft: '5%', flexDirection: 'row', justifyContent: 'space-between', marginRight: '5%' }}>
-              <TouchableOpacity style={{ borderRadius: 30 }} onPress={() => navigation.navigate('Home')}>
-                <View><Entypo name="home" size={40} color={"black"} /></View>
-              </TouchableOpacity>
-              <TouchableOpacity style={{ borderRadius: 30 }} onPress={() => navigation.navigate('Historico')}>
-                <View><AntDesign name="solution1" size={40} color={"black"} /></View>
-              </TouchableOpacity >
-              <TouchableOpacity style={{ borderRadius: 30 }} onPress={() => navigation.navigate('CadastrarProduto')}>
-                <View><Ionicons name="add" size={40} color={"black"} /></View>
-              </TouchableOpacity>
-              <TouchableOpacity style={{ borderRadius: 30 }}>
-                <View><Ionicons name="alert" size={40} color={"black"} /></View>
-              </TouchableOpacity>
-              <TouchableOpacity style={{ borderRadius: 30 }} onPress={() => navigation.navigate('Login')}>
-                <View><Ionicons name="log-in-outline" size={40} color={"black"} /></View>
-              </TouchableOpacity>
-            </View>
-          </View>
-      </Container>
+          <AppMainMenu/>
+      </View>
     )
 }
 

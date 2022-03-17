@@ -1,5 +1,5 @@
 import React, { useState, useEffect  } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, ScrollView, Modal, Button } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, ScrollView, Modal, Button } from 'react-native';
 import { Entypo, Ionicons, AntDesign } from "@expo/vector-icons";
 import {useDispatch, useSelector} from 'react-redux';
 import {SaveProductRequest} from '../../store/modules/Registro/actions.js'
@@ -7,15 +7,12 @@ import { CenterAlign, Container, Txt, TxtTitle, Input } from './styles.js';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
 export default function CadastrarProduto({ navigation }) {
-  const [modalVisible, setModalVisible] = useState(false);//controlador modal
-
   const [UserName, SetUserName] = useState('Nome Do Usuario');
   const [ProductsName, SetproductsName] = useState('');
   const [ManufacturerName, SetManufacturerName] = useState('');
   const [AmountOfProduct, SetAmountOfProduct] = useState('');
   const [AmountOfProtein, SetAmountOfProtein] = useState('');
   const [AmountOfPhenylalanine, SetAmountOfPhenylalanine] = useState('');
-
   const dispatch= useDispatch();
   //const {UserName} = useSelector(state => state.Login); quando terminar login
   
@@ -23,24 +20,19 @@ export default function CadastrarProduto({ navigation }) {
     console.log(ProductsName);
     dispatch(SaveProductRequest(ProductsName, ManufacturerName, AmountOfProduct, AmountOfProtein, AmountOfPhenylalanine));
   }
-
   function handleProductName(value){
     SetproductsName(value)
   }
-
   function handleManufacturerName(value){
     SetManufacturerName(value);
   }
-
   function handleAmountOfProduct(value){
     SetAmountOfProduct(value);
   }
-
   function handleAmountOfProtein(value){
     SetAmountOfProtein(value);
     calculatingAmountOfPhenylalanine(value);
   }
-
   function calculatingAmountOfPhenylalanine(value){
     if(value!=''){
       const att=parseInt(value)*50;
@@ -49,28 +41,14 @@ export default function CadastrarProduto({ navigation }) {
       SetAmountOfPhenylalanine('')
     }
   }
-
   function handleAmountOfPhenylalanine(value){
     SetAmountOfPhenylalanine(value);
   }
 
-  //code bar code:
-  const [hasPermission, setHasPermission] = useState(null);
-  const [scanned, setScanned] = useState(false);
-
-  useEffect(() => {
-    (async () => {
-      const { status } = await BarCodeScanner.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    })();
-  }, []);
-
-  const handleBarCodeScanned = ({ type, data }) => {
-    setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
-  };
-
-
+  function handleValue(value) {
+    console.log(value)
+  }
+  
   return (
     <View style={{flex:1, backgroundColor:"#CDDCFE" }}>
         <Modal transparent={true}
@@ -102,12 +80,20 @@ export default function CadastrarProduto({ navigation }) {
             {UserName}
           </Text>
         <View style={{ borderBottomColor: 'black', borderBottomWidth: 1 }} />
-      <ScrollView>
 
         <View>
-          <TxtTitle>
+          <AppText>
+            {UserName}
+          </AppText>
+        </View>
+
+        <AppSeparator/>
+
+      <ScrollView>
+        <View>
+          <AppText>
             Cadastro de produto
-          </TxtTitle>
+          </AppText>
         </View>
 
         <View style={{alignItems:'center'}}>
@@ -117,11 +103,11 @@ export default function CadastrarProduto({ navigation }) {
         </View>
 
         <View style={{marginRight:"10%", marginLeft:"10%"}}>
-          <View style={{marginTop:"2%"}}>
-            <Text style={{fontSize:20, textAlign:'center'}}>
+          <View>
+            <AppText>
               Nome do produto
-            </Text>
-            <TextInput value={ProductsName} style={{ borderWidth: 1, backgroundColor:"white" }} onChangeText={handleProductName}/>
+            </AppText>
+            <AppInput value={ProductsName} onChangeText={handleProductName}/>
           </View>
 
           <View style={{marginTop:"5%"}}>
@@ -185,18 +171,3 @@ export default function CadastrarProduto({ navigation }) {
   </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    bottom: 0,
-    height: '8%',
-    zIndex: 9,
-    position: 'absolute',
-    backgroundColor: 'white',
-    borderColor: 'gray',
-    borderWidth: 1,
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
-    width: '100%',
-  },
-});
