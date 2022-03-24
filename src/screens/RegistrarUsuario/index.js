@@ -6,11 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 
 //STYLE
-import { LAppContainer, LAppCabecalho, LAppLogo, LAppInput, 
-    LAppLoginButton, LAppForgetPasswordButton, LAppLine1, LAppLine2,
-    LAppText, LAppSocialButtonGoogle, LAppSocialButtonFacebook, LAppSign, LAppTextSign,
-    LAppForgetModalContainer, LAppForgetModalView, LAppForgetModalCloseButton,
-    LAppForgetModalText, LAppForgetModalOk} from './style';
+import { LAppContainer,LAppInput,  LAppText, LAppSocialButtonFacebook, LAppViewInput} from './style';
 
 export default function RegistrarUsuario({ navigation }) {
   return (
@@ -26,46 +22,58 @@ export default function RegistrarUsuario({ navigation }) {
                     <LAppText>
                         Nome:
                     </LAppText>
-                    <LAppInput/>
+                    <LAppViewInput>
+                        <LAppInput/>
+                    </LAppViewInput>
                 </View>
 
                 <View>
                     <LAppText>
                         Telefone:
                     </LAppText>
-                    <LAppInput/>
+                    <LAppViewInput>
+                        <LAppInput/>
+                    </LAppViewInput>
                 </View>
 
                 <View>
                     <LAppText>
                         Email:
                     </LAppText>
-                    <LAppInput/>
+                    <LAppViewInput>
+                        <LAppInput/>
+                    </LAppViewInput>
                 </View>
 
                 <View>
                     <LAppText>
                         CPF:
                     </LAppText>
-                    <LAppInput/>
+                    <LAppViewInput>
+                        <LAppInput/>
+                    </LAppViewInput>
                 </View>
 
                 <View>
                     <LAppText>
                         Senha:
                     </LAppText>
-                    <LAppInput/>
+                    <LAppViewInput>
+                        <LAppInput/>
+                    </LAppViewInput>
                 </View>
 
                 <View>
                     <LAppText secureTextEntry={true}>
                         Confirme a senha:
                     </LAppText>
-                    <LAppInput/>
+                    <LAppViewInput>
+                        <LAppInput/>
+                    </LAppViewInput>
                 </View>
             </View>
             <View style={{marginLeft:20, marginRight:20, flexDirection:'row', justifyContent:'space-between'}}>
-            <LAppSocialButtonFacebook style={{flexDirection:'row', backgroundColor: '#11134A'}}>
+            <LAppSocialButtonFacebook onPress={() => navigation.goBack(null)} style={{flexDirection:'row', backgroundColor: '#11134A'}}>
                 <Ionicons name="arrow-back" size={24} color="black" />
                 <LAppText style={{color:'#FFFFFF',}}>
                     VOLTAR

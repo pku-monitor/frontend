@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const LAppContainer = styled.View`
   flex:1;
-  background: #C8F5EE;
+  background: #808080;
 `;
 
 export const LAppCabecalho = styled.View`
@@ -25,11 +25,16 @@ export const LAppLogo = styled.View`
   border-radius: 15px;
 `;
 
-export const LAppInput = styled.TextInput`
+export const LAppViewInput = styled.View`
   height: 50px;
   margin-bottom:20px
   background: #FFFFFF;
   border-radius: 50px;
+  justifyContent:center;
+`;
+
+export const LAppInput = styled.TextInput`
+  margin-horizontal:16px;
 `;
 
 export const LAppLoginButton = styled.TouchableOpacity`

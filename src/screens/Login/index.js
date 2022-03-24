@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Modal, Button, StatusBar, ActivityIndicator } from 'react-native';
+import { View, Modal, Button, StatusBar, ActivityIndicator, TextInput } from 'react-native';
 
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,9 +10,9 @@ import { LAppContainer, LAppCabecalho, LAppLogo, LAppInput,
   LAppLoginButton, LAppForgetPasswordButton, LAppLine1, LAppLine2,
   LAppText, LAppSocialButtonGoogle, LAppSocialButtonFacebook, LAppSign, LAppTextSign,
   LAppForgetModalContainer, LAppForgetModalView, LAppForgetModalCloseButton,
-  LAppForgetModalText, LAppForgetModalOk} from './styles';
+  LAppForgetModalText, LAppForgetModalOk, LAppViewInput} from './styles';
 
-const Login = ({ navigation }) => {
+export default function Login ({ navigation }){
 /*
   const dispatch = useDispatch();
   const { loading, personagens } = useSelector((state) => state.login)
@@ -36,6 +36,7 @@ const Login = ({ navigation }) => {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [modalVisibleConfirm, setmodalVisibleConfirm] = useState(false);
+
   return (
     <LAppContainer>
       <Modal
@@ -58,7 +59,9 @@ const Login = ({ navigation }) => {
               Qual seu email?
             </LAppForgetModalText>
 
-            <LAppInput/>
+            <LAppViewInput>
+              <LAppInput style={{marginHorizontal:16,}}/>
+            </LAppViewInput>
 
             <LAppForgetModalOk onPress={()=>{setModalVisible(!modalVisible);setmodalVisibleConfirm(true)}}>
               <LAppForgetModalText style={{marginTop:6}}>
@@ -90,7 +93,9 @@ const Login = ({ navigation }) => {
               Digite o código que enviamos ao seu email:
             </LAppForgetModalText>
 
-            <LAppInput/>
+            <LAppViewInput>
+              <LAppInput style={{marginHorizontal:16,}}/>
+            </LAppViewInput>
 
             <LAppForgetModalOk>
               <LAppForgetModalText style={{marginTop:6}}>
@@ -110,11 +115,15 @@ const Login = ({ navigation }) => {
           <LAppText style={{marginBottom:5}}>
             Email:
           </LAppText>
-          <LAppInput/>
+          <LAppViewInput>
+            <LAppInput/>
+          </LAppViewInput>
           <LAppText style={{marginBottom:5}}>
             Senha:
           </LAppText>
-          <LAppInput/>
+          <LAppViewInput>
+            <LAppInput style={{marginHorizontal:16,}}/>
+          </LAppViewInput>
         </View>
 
         <LAppForgetPasswordButton>
@@ -124,7 +133,7 @@ const Login = ({ navigation }) => {
         </LAppForgetPasswordButton>
 
 
-        <LAppLoginButton onPress={() => navigation.navigate('LoginNome')}>
+        <LAppLoginButton>
           <LAppText style={{color:'#FFFFFF',}}>
             ENTRAR
           </LAppText>
@@ -165,23 +174,3 @@ const Login = ({ navigation }) => {
     </LAppContainer>
   )
 }
-{/*<Container>
-              <Txt>PKU</Txt>
-              <Txt>Monitor</Txt>
-              <Input value = {username} onChangeText = {handleUsername} keyboardType = "email-address" placeholder = "Digite seu e-mail"></Input>
-              <Input value = {password} onChangeText = {handlePassword} placeholder = "Digite sua senha"></Input>
-              {loading && <ActivityIndicator size = "large" color = "red" />}
-              
-              <Button onPress={handleSignIn}>
-                <TxtButton>Entrar</TxtButton>
-              </Button>
-              <Button onPress={() => navigation.navigate('CadastrarProduto')}>
-                <TxtButton>Login Screen -{'>'} Registro Screen</TxtButton>
-              </Button>
-              <Button onPress={() => navigation.navigate('RecuperarSenha')}>
-                <TxtButton>Recuperar Senha</TxtButton>
-              </Button>
-              <StatusBar marginTop = {'auto'}></StatusBar>
-              {personagens.map((personagem) => <TxtButton>{personagem.name}</TxtButton>)}
-                </Container>*/}
-export default Login;
