@@ -1,29 +1,29 @@
-import React from 'react';
-import { StatusBar} from 'react-native';
-import { Container, Txt, Button, TxtButton, Input } from '../Login/styles';
+import React, { useState } from 'react';
+import { View, Modal, Button, StatusBar, ActivityIndicator, ScrollView } from 'react-native';
+import { Ionicons } from '@expo/vector-icons'; 
 
-const RecuperarSenha = ({ navigation }) => {
-  
-    return(
-        <Container>
-        <Txt>Recuperar Senha</Txt>
-        <Input
-        keyboardType = "email-address" placeholder = "Digite seu e-mail">
-        </Input>
-        <Input
-        placeholder = "Digite sua senha">
-        </Input>
-        <Input
-        placeholder = "Confirme sua senha">
-        </Input>
-        <Button onPress={() => navigation.navigate('Login')}>
-          <TxtButton>Concluído</TxtButton>
-        </Button>
-        <StatusBar marginTop = {'auto'}></StatusBar>
-        </Container>
+//REDUX
+import { useDispatch, useSelector } from 'react-redux';
 
-    )
+//STYLE
+import { LAppContainer, LAppCabecalho, LAppLogo, LAppInput, 
+    LAppLoginButton, LAppForgetPasswordButton, LAppLine1, LAppLine2,
+    LAppText, LAppSocialButtonGoogle, LAppSocialButtonFacebook, LAppSign, LAppTextSign,
+    LAppForgetModalContainer, LAppForgetModalView, LAppForgetModalCloseButton,
+    LAppForgetModalText, LAppForgetModalOk} from './styles';
 
-}
-
-export default RecuperarSenha;
+export default function RecuperarSenha({ navigation }) {
+  return (
+    <ScrollView>
+      <View>
+        <LAppText>
+          Recuperar Senha
+        </LAppText>
+      </View>
+        <LAppContainer>
+              
+            <LAppInput/>
+            <LAppInput/>
+        </LAppContainer>
+    </ScrollView>
+)}
